@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ENCODE TEXT</title>
+  <body>
+    <!-- <input type="text" id="pt">
+    <button type="button" onclick="encode()">ENCODE</button>
+    <p id="ct"></p> -->
+    <p>Plain Text:</p>
+        <textarea id="pt" rows="8" cols="24"></textarea>
+        <button onclick="encode()">Encryt</button>
+        <p>Cipher Text:</p>
+        <textarea id="ct" rows="8" cols="24"></textarea>
+
+
+    <script type="text/javascript">
+        function encode()
+        {
+          var key=Math.floor(Math.random()*10);
+          //  alert(key);
+                var p=document.getElementById("pt").value;
+                var c="";
+                var i=0;
+
+                for(i=0;i<=p.length;i++){
+                    c = c + String.fromCharCode((((p.charCodeAt(i)-97)+key)%26)+97);
+            }
+          //    alert(key);
+                document.getElementById("ct").innerHTML=c;
+        }
+    </script>
+  </body>
+</html>
